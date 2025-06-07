@@ -31,7 +31,7 @@
       height: 400px;
       border-radius: 50%;
       background: #004080;
-      overflow: hidden;
+      overflow: visible;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -113,12 +113,36 @@
       border-radius: 10px;
       cursor: pointer;
     }
+
+    /* فلش چشمک‌زن */
+    .arrow {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      color: yellow;
+      animation: blink 1s infinite;
+      z-index: 10;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0; }
+    }
+
+    #hotDrinks {
+      position: relative;
+    }
   </style>
 </head>
 <body>
   <div class="carousel-container">
     <div class="carousel-menu" id="menu">
-      <div class="item" id="hotDrinks" style="transform: rotate(0deg) translateY(-150px) rotate(0deg);"><span>نوشیدنی‌های گرم</span></div>
+      <div class="item" id="hotDrinks" style="transform: rotate(0deg) translateY(-150px) rotate(0deg);">
+        <div class="arrow">⬇️</div>
+        <span>نوشیدنی‌های گرم</span>
+      </div>
       <div class="item" style="transform: rotate(72deg) translateY(-150px) rotate(-72deg);"><span>نوشیدنی‌های سرد</span></div>
       <div class="item" style="transform: rotate(144deg) translateY(-150px) rotate(-144deg);"><span>کیک و شیرینی</span></div>
       <div class="item" style="transform: rotate(216deg) translateY(-150px) rotate(-216deg);"><span>میان‌وعده</span></div>
